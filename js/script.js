@@ -71,10 +71,9 @@ function submitParameters() {
 
 // Build chart with user data and settings
 function startBuildingChart() {
-  // External function in bar-chart.js
-  // Fills empty parameters with default ones and saves some restructures object data
-  // eslint-disable-next-line no-undef
-  const barObject = formatObject(userData, testOptions, testElement);
+  // eslint-disable-next-line no-undef --- External function in chart-handler.js
+  const barObject = parseObject(userData, testOptions, testElement);
+  // ^ Fills empty parameters with default ones and saves some restructures object data
 
   // Renders Bar Chart
   generateBarChart(barObject.data, barObject.options, barObject.element);
@@ -92,7 +91,7 @@ function generateBarChart(data, options, element) {
 
 
 
-  // Check if already created to prevent duplicate
+  // Destroy old chart if exists
   $(element).empty();
   readyToBuild = false;
 

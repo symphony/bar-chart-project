@@ -46,7 +46,7 @@ const defaultElement = "#chart-1"; // class or id name
 
 
 // Main Bar Chart Function
-function formatObject(uData, uOptions, uElement) {
+function parseObject(uData, uOptions, uElement) {
   // initialize values
   let data = uData || defaultData; // array
   const options = defaultOptions; // object
